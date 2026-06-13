@@ -18,6 +18,11 @@ with open("data/municipios.csv", encoding="utf-8") as arquivo:
             """
             INSERT INTO municipios (id, nome, estado_id)
             VALUES (%s, %s, %s)
+            ON CONFLICT (id)
+            DO UPDATE
+            SET
+                nome = EXCLUDED.nome,
+                estado_id = EXCLUDED.estado_id;
             """,
             (
                 int(municipio["id"]),
