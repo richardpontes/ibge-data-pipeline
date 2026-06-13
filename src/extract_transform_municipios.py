@@ -14,8 +14,7 @@ for municipio in dados:
     municipios.append({
         "id": municipio["id"],
         "nome": municipio["nome"],
-        "estado_id": uf["id"],
-        "estado_sigla": uf["sigla"]
+        "estado_id": uf["id"]
     })
 
 with open("data/municipios.csv", "w", newline="", encoding="utf-8") as arquivo:
@@ -25,8 +24,7 @@ with open("data/municipios.csv", "w", newline="", encoding="utf-8") as arquivo:
         fieldnames=[
             "id",
             "nome",
-            "estado_id",
-            "estado_sigla"
+            "estado_id"
         ]
     )
 
